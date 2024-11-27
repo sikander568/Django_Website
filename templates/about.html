@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} About{% endblock title %}
+
+{% block body  %}
+<div class = "container-fluid px-0 mb-3">
+    <img src="/static/3.png"width="0" class="d-block w-100"  alt="...">
+    
+</div>
+
+<div class="container py-4">
+    <h1 class = "text-center">contactus</h1>
+    
+    {% comment %} <form method ="post" action ="/about"> {% endcomment %}
+   <form method="POST" action ="/about">
+    {% csrf_token %}
+    {% comment %} <div class = "mb-3">
+        <label for="exampleFormControlInput1"class="form-label">Name</label>
+        <input type="text" name="name" class="form-control"placeholder="Enter your phone">
+    </div> {% endcomment %}
+    <div class="mb-3">
+        <label for="exampleFormControlInput1"  class="form-label">Email address</label>
+        <input type="email" name="email"class="form-control" placeholder="Enter your email">
+        {% comment %} <input type="email" class="form-control"  name = "Email"id="exampleFormControlInput1" placeholder="name@example.com"> {% endcomment %}
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Phone number</label>
+        <input type="text" name="phone" class="form-control"placeholder="Enter your phone">
+        {% comment %} <input type="Phone" class="form-control"  name = "Phone"id="Phone" placeholder="enter your phone number"> {% endcomment %}
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea name="desc" class = "form-control" placeholder="Enter description"></textarea>
+        {% comment %} <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> {% endcomment %}
+      </div>
+      {% comment %} <button type="submit">Submit</button> {% endcomment %}
+      <button class = "btn btn-primary" type = "submit">
+        Submit
+      </button>
+    </form>
+</div>
+
+{% endblock body %}
+
